@@ -18,10 +18,15 @@ class ViewController: UIViewController {
         //print("--->\(result)")
         
         
-        /*  Q2 : Find string palindrome */
+        /*  Q2 : Find string palindrome : O(1)
        // let result1 = self.findStringPalindrome(input: "Hello, world")
         let result1 = self.findStringPalindrome1(input: "Hello, world")
         print(result1)
+         */
+        
+        /* Q3 :*/
+        let result = self.findTwoStringContainSameCharacters(string1: "a1 b2", string2: "b1 a2")
+        print(result)
     }
     // brute force
     
@@ -59,6 +64,22 @@ class ViewController: UIViewController {
         print(input.reversed())
        return input.reversed() == Array(input)
     }
-
+   /* Q3 : two strings contain the same characters
+    The strings “abca” and “abca” should return true.
+    The strings “abc” and “Abc” should return false.
+    */
+    func findTwoStringContainSameCharacters(string1: String , string2: String) -> Bool {
+        if string1.count == string2.count {
+            let set1 = Set(string1)
+            let set2 = Set(string2)
+            if set1  == set2 {
+                return true
+            } else {
+                return false
+            }
+        } else {
+            return false
+        }
+    }
 }
 
