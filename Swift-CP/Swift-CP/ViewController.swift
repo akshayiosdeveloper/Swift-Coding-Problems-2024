@@ -30,7 +30,7 @@ class ViewController: UIViewController {
        // let result = self.findTwoStringContainSameCharacters(string1: "a1 b2", string2: "b1 a2")
        // print(result)
         /* Q4 : */
-       let result =  self.containsString(inputString: "1345345", actualString: "Hello, world")
+       let result =  self.containsString(inputString: "o", actualString: "Hello, world")
         print(result)
     }
     // brute force
@@ -93,12 +93,10 @@ class ViewController: UIViewController {
      false.
      */
     func containsString(inputString: String,actualString:String) -> Bool {
-        let range = inputString.range(of: inputString)
-        print(range)
-        let nsRagne = NSRange(range!, in: actualString)
-        print(nsRagne)
-        if nsRagne != nil  {
-            return true
+        let range = actualString.range(of: inputString,options: .caseInsensitive)
+        print("range:\(range)")
+        if range != nil {
+        return true
         } else {
             return false
         }
